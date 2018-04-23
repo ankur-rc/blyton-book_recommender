@@ -6,7 +6,7 @@ title: Introducing Blyton
 Blyton is a unique book recommender system to generate recommendations for readers based on their guided reading levels.
 </div>
 # [<center>See it in action</center>]()
-## Background
+## <a name="bg"></a> Background 
 
 ### [Guided Reading & Leveled Reading Systems](http://www.scholastic.com/parents/resources/article/book-selection-tips/parents-guide-to-guided-readin) 
 It is a practice designed to allow students to develop reading proficiency by providing differentiated teaching and is usually in small-group settings. Guided reading is used in classrooms, in small-sized reading clubs and for independent reading. When a child enters a new grade, he is assigned a guided reading level based on his word-knowledge, comprehension skills and fluency allowing the teacher to work closely with each student and help them become better readers by suggesting new challenging books. 
