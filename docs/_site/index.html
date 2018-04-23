@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Blyton &middot; A Leveled Book Recommender
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-0d">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+      <!-- <div style="width:112.5px; height:217px;"></div></img></div> -->
+    <div class="sidebar-about" style="display: inline;">
+      <h1>
+        <a href="/">
+          Blyton
+        </a>
+      </h1>
+      <p class="lead">A web-based tool to generate recommendations for users based on their guided reading levels. </p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item active" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">Our Team</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+
+      <!-- <a class="sidebar-nav-item" href="https://github.com/poole/hyde/archive/v1.0.0.zip">Download</a> -->
+      <a class="sidebar-nav-item" href="https://github.com/poole/hyde">GitHub project</a>
+      <a class="sidebar-nav-item" href="https://github.com/poole/hyde">Demo Video</a>
+      <span class="sidebar-nav-item">Currently v1.0.0</span>
+    </nav>
+
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2018/04/20/introducing-blyton/">
+        Introducing Blyton
+      </a>
+    </h1>
+
+    <!-- <span class="post-date">20 Apr 2018</span> -->
+
+    <div class="message">
+Blyton is a unique book recommender system to generate recommendations for readers based on their guided reading levels.
+</div>
+
+<h1><a href=""><center>See it in action</center></a></h1>
+
+<h2>Background</h2>
+
+<h3><a href="http://www.scholastic.com/parents/resources/article/book-selection-tips/parents-guide-to-guided-readin">Guided Reading &amp; Leveled Reading Systems</a></h3>
+
+<p>It is a practice designed to allow students to develop reading proficiency by providing differentiated teaching and is usually in small-group settings. Guided reading is used in classrooms, in small-sized reading clubs and for independent reading. When a child enters a new grade, he is assigned a guided reading level based on his word-knowledge, comprehension skills and fluency allowing the teacher to work closely with each student and help them become better readers by suggesting new challenging books. 
+In a similar way, books are assigned guided reading levels too. These levels indicate the complexity of a book taking into account book characteristics such as genre, text structure, content, ideas, sentence complexity, words, vocabulary, print features etc.<br>
+Following is a list of <a href="https://www.scholastic.com/teachers/articles/teaching-content/leveled-reading-systems-explained/">leveled reading systems</a> that are commonly used depending on the students, curriculum (reading methods and materials), colleagues (of the teacher) and parents (comparison with other children).</p>
+
+<ul>
+<li><strong><a href="http://www.fountasandpinnell.com/textlevelgradient/">Grade Level Equivalent</a></strong> </li>
+<li><strong><a href="http://teacher.scholastic.com/products/guidedreading/leveling_chart.htm">Guided Reading Level</a></strong></li>
+<li><strong><a href="https://lexile.com/">Lexile Measure</a></strong></li>
+<li><strong><a href="http://4cameron.weebly.com/uploads/1/3/7/4/13748160/dra-summary_1.pdf">Developmental Reading Assessment (DRA)</a></strong></li>
+<li>Interest Level</li>
+<li>Grade Level</li>
+<li>Reading Recovery</li>
+</ul>
+
+<p><strong>Blyton uses a combination of the <a href="http://www.scholastic.com/parents/resources/article/book-selection-tips/lexile-levels-made-easy">Lexile</a> reading score, book ratings and user preference to generate book recommendations for the readers.</strong></p>
+
+<h2>Motivation for Blyton</h2>
+
+<p>Currently, only teachers and parents who are familiar with the workings of reading levels suggest new books to a child taking his or her guided reading level into consideration. This has several caveats like human error, bias, lack of empirical evidence behind suggestions etc. There is no commercially available automatic recommender system grounded in theory suggesting books to children on the basis of their reading levels. Blyton attacks this problem, being a simple web-based tool that generates accurate recommendations for students and thereby, offload the teacher and/or parent of this task.</p>
+
+<h3>Who would use Blyton?</h3>
+
+<p>Blyton would be used in schools and reading clubs to get better recommendations for individual readers. Both teachers and students (of different reading abilities) can use the tool to get recommendations on new books according to the student’s Lexile scores(or other guided system scores), interest and other factors. </p>
+
+<h2>Related Work</h2>
+
+<p>The following systems are similar to Blyton:</p>
+
+<h3>Commercial Systems</h3>
+
+<p><strong><a href="https://www.goodreads.com/">Goodreads</a>(social network for book lovers)</strong></p>
+
+<ul>
+<li><strong>System Overview</strong>: Uses a hybrid approach - recommendations on the basis of books rated by the user in the past and books that people with similar taste have liked.</li>
+<li><strong>Cons</strong>: 
+Requires the user to rate at-least 20 books before it can give recommendations
+Does not take into account the reading ability of the users</li>
+</ul>
+
+<p><strong><a href="https://www.amazon.com/s/ref=lp_4_nr_p_n_feature_thirteen_0?fst=as%3Aoff&rh=n%3A283155%2Cn%3A%211000%2Cn%3A4%2Cp_n_feature_thirteen_browse-bin%3A6938732011&bbn=4&ie=UTF8&qid=1524235898&rnid=6938731011">Amazon’s Recommender System for Books</a></strong></p>
+
+<ul>
+<li><strong>System Overview</strong>: Amazon’s recommender system has evolved over the years incorporating several factors/techniques but the base algorithm still uses the widely successful simple item-based collaborative filtering introduced in 2003.<br></li>
+<li><strong>Cons</strong>:
+Geared more towards the general e-commerce products
+Only has Lexile measures for the books (does not take into account other reading systems)
+Not focused on enhancing user’s reading ability but selling products</li>
+</ul>
+
+<p><strong><a href="https://www.scholastic.com/teachers/bookwizard/">Scholastic Book Wizard</a></strong></p>
+
+<ul>
+<li><strong>System Overview</strong>: Provides list of books categorized by guided reading systems, genre, subject, grade etc.<br></li>
+<li><strong>Cons</strong>: 
+Lacks a good recommender system</li>
+</ul>
+
+<p><strong>Other book recommender systems</strong>: bookbub.com, librarything.com, whichbook.net, whatshouldireadnext.com, Booklamp (acquired by Apple), lazylibrary.com.</p>
+
+<h3>Research Papers</h3>
+
+<p>The following are few research papers highlighting concepts similar to Blyton:</p>
+
+<ul>
+<li><p><a href="https://ieeexplore.ieee.org/abstract/document/6927643/">M. S. Pera and Y. K. Ng, &quot;How Can We Help Our K-12 Teachers?: Using a Recommender to Make Personalized Book Suggestions,&quot; 2014 IEEE/WIC/ACM International Joint Conferences on Web Intelligence (WI) and Intelligent Agent Technologies (IAT), Warsaw, 2014, pp. 335-342</a>.</p></li>
+<li><p><a href="https://ieeexplore.ieee.org/abstract/document/7160349/">Petrović, Iva, Paolo Perković, and Ivan Štajduhar. &quot;A profile-and community-driven book recommender system.&quot; In Information and Communication Technology, Electronics and Microelectronics (MIPRO), 2015 38th International Convention on, pp. 631-635. IEEE, 2015.</a></p></li>
+<li><p><a href="https://ieeexplore.ieee.org/document/8070165/">Y. Zhu, &quot;A book recommendation algorithm based on collaborative filtering,&quot; 2016 5th International Conference on Computer Science and Network Technology (ICCSNT), Changchun, 2016, pp. 286-289.</a></p></li>
+<li><p><a href="https://dl.acm.org/citation.cfm?id=1795167">Rendle, Steffen, Christoph Freudenthaler, Zeno Gantner, and Lars Schmidt-Thieme. &quot;BPR: Bayesian personalized ranking from implicit feedback.&quot; In Proceedings of the twenty-fifth conference on uncertainty in artificial intelligence, pp. 452-461. AUAI Press, 2009.</a></p></li>
+</ul>
+
+<h3>How Blyton is different?</h3>
+
+<p>Since Blyton aims to create a curated reading list of book recommendations for an individual reader keeping in mind his or her reading ability it differs from the previous systems in the following ways:</p>
+
+<ul>
+<li>Focused on enhancing the reading ability of the student by suggesting books that help in developing a higher leveled reading score if the student is improving in his or her performance or suggesting books that help the student in creating a solid foundation on his current reading level before moving higher.
+Suggesting books that are of student’s interest taking into account the genre of books he is reading, interest in the topic and student’s reading ability.</li>
+<li>A narrow user base (focusing primarily on children and beginner readers) and narrow book dataset (focused on books with Leveled Reading Scores).</li>
+<li>Reducing the effort of teachers in finding and suggesting books to students taking into account their abilities and interest.</li>
+</ul>
+
+<h2>Proposed Solution</h2>
+
+<h3>Overview of the tool</h3>
+
+<p>Currently, Blyton runs on a <strong><a href="http://jupyter.org/">Jupyter Notebook</a></strong> using <strong><a href="https://ipython.org/">IPython</a></strong>. We have converted the notebook into a RESTful API. The front-end of the web app is built using <strong><a href="https://angular.io/">Angular</a></strong>. </p>
+
+<h3>Dataset</h3>
+
+<h4>Creating the Dataset</h4>
+
+<p><strong><a href="http://jmcauley.ucsd.edu/data/amazon/">Amazon Book Dataset</a></strong><br>
+This dataset contains the ratings of ~22 million book ratings. We enriched this dataset by filtering out the items which do not have a &#39;lexile rating’. We do this by scraping the Scholastic Book Wizard (below) by filtering for &#39;books by lexile rating’ (https://goo.gl/2BepYw). We then compute the intersection of the scraped dataset with the Amazon Book Dataset. Thus, we obtain a dataset with each row as: user<em>id, item</em>id, rating, lexile_rating.</p>
+
+<h4>Website Scraping</h4>
+
+<p>Scraped <strong><a href="https://www.scholastic.com/teachers/bookwizard">Scholastic Book Wizard</a></strong></p>
+
+<p><strong>Tool Used</strong></p>
+
+<p><strong><a href="https://scrapy.org/">Scrapy</a></strong> </p>
+
+<h3>Algorithm</h3>
+
+<p>Collaborative Filtering based Hybrid Recommendation using Matrix Factorization
+We plan on using a collaborative filtering technique with implicit data in terms of the user&#39;s reading ability. We plan to employ algorithms like Bayesian Personalised Ranking or Alternating Least Squares for matrix factorization.
+In our case, the number of books will be our features &amp; each user would be a data point. Since the number of books is very high, we also plan to use dimensionality reduction techniques, such as SVD. This would enable better representation and fasten the computation.
+Another avenue to pursue is the use of sequence modelling. Our dataset contains users’ book ratings with their purchase timestamps. Thus, the problem of prediction could be reduced to a sequence prediction problem. Neural methods employed in sequence prediction involves the use of RNNs, more specifically we could use Gated Recurrent Units (GRUs).</p>
+
+<h2>Evaluation of Results</h2>
+
+<h2>Conclusion</h2>
+
+<h3>Our Learnings</h3>
+
+<h3>Challenges We Faced</h3>
+
+<h3>Future Work</h3>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2012/02/07/example-content/">
+        Example Content
+      </a>
+    </h1>
+
+    <!-- <span class="post-date">07 Feb 2012</span> -->
+
+    <!-- ---
+layout: post
+title: Example content
+---
+
+
+<div class="message">
+  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
+</div>
+
+Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+
+> Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+
+## Inline HTML elements
+
+HTML defines a long list of available inline tags, a complete list of which can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+
+- **To bold text**, use `<strong>`.
+- *To italicize text*, use `<em>`.
+- Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use `<abbr>`, with an optional `title` attribute for the full phrase.
+- Citations, like <cite>&mdash; Mark otto</cite>, should use `<cite>`.
+- <del>Deleted</del> text should use `<del>` and <ins>inserted</ins> text should use `<ins>`.
+- Superscript <sup>text</sup> uses `<sup>` and subscript <sub>text</sub> uses `<sub>`.
+
+Most of these elements are styled by browsers with few modifications on our part.
+
+## Heading
+
+Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+### Code
+
+Cum sociis natoque penatibus et magnis dis `code element` montes, nascetur ridiculus mus.
+
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="c1">// Example can be run directly in your JavaScript console</span>
+
+<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments</span>
+<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;return a + b&quot;</span><span class="p">);</span>
+
+<span class="c1">// Call the function</span>
+<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<span class="c1">// &gt; 8</span></code></pre></figure>
+
+
+Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
+
+### Gists via GitHub Pages
+
+Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.
+
+<noscript><pre>400: Invalid request
+</pre></noscript><script src="https://gist.github.com/5555251.js?file=gist.md"> </script>
+
+Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.
+
+### Lists
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+
+* Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+* Donec id elit non mi porta gravida at eget metus.
+* Nulla vitae elit libero, a pharetra augue.
+
+Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+
+1. Vestibulum id ligula porta felis euismod semper.
+2. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+3. Maecenas sed diam eget risus varius blandit sit amet non magna.
+
+Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
+
+<dl>
+  <dt>HyperText Markup Language (HTML)</dt>
+  <dd>The language used to describe and define the content of a Web page</dd>
+
+  <dt>Cascading Style Sheets (CSS)</dt>
+  <dd>Used to describe the appearance of Web content</dd>
+
+  <dt>JavaScript (JS)</dt>
+  <dd>The programming language used to build advanced Web sites and applications</dd>
+</dl>
+
+Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.
+
+### Images
+
+Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.
+
+![placeholder](http://placehold.it/800x400 "Large example image")
+![placeholder](http://placehold.it/400x200 "Medium example image")
+![placeholder](http://placehold.it/200x200 "Small example image")
+
+### Tables
+
+Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Upvotes</th>
+      <th>Downvotes</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>Totals</td>
+      <td>21</td>
+      <td>23</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Charlie</td>
+      <td>7</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.
+
+-----
+
+Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a> -->
+
+  </div>
+  
+</div>
+
+<!-- <div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div> -->
+    </div>
+
+  </body>
+</html>
