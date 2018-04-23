@@ -83,14 +83,16 @@ Currently, Blyton runs on a **[Jupyter Notebook](http://jupyter.org/)** using **
 
 ### Dataset
 #### Creating the Dataset
-**[Amazon Book Dataset](http://jmcauley.ucsd.edu/data/amazon/)**  
-This dataset contains the ratings of ~22 million book ratings. We enriched this dataset by filtering out the items which do not have a 'lexile rating’. We do this by scraping the Scholastic Book Wizard (below) by filtering for 'books by lexile rating’ (https://goo.gl/2BepYw). We then compute the intersection of the scraped dataset with the Amazon Book Dataset. Thus, we obtain a dataset with each row as: user_id, item_id, rating, lexile_rating.
-#### Website Scraping
-Scraped **[Scholastic Book Wizard](https://www.scholastic.com/teachers/bookwizard)**
+The dataset is created from three sources:
+-**[Amazon Book Dataset - Ratings](http://jmcauley.ucsd.edu/data/amazon/)**  
+This dataset contains the ratings of ~22 million book ratings. A typical record holds: user_id, item_id, rating entries.
+-#### Website Scraping
+Scraped **[Scholastic Book Wizard](https://www.scholastic.com/teachers/bookwizard)** pages filtered by lexile score. Typical record contains: name, lexile pairs.
+View the **[Scrapy](https://scrapy.org/)** script [here](https://github.tamu.edu/ankurrc/cs670-Blyton/blob/master/code/crawler/BooksSpider.py).
+-**[Amazon Book Dataset - Metadata](http://jmcauley.ucsd.edu/data/amazon/)**
+This dataset contains metadata for about 3 million books, including: name, author, price, image url etc.
 
 **Tool Used**
-
-**[Scrapy](https://scrapy.org/)** 
 
 
 ### Algorithm
