@@ -84,15 +84,19 @@ Currently, Blyton runs on a **[Jupyter Notebook](http://jupyter.org/)** using **
 ### Dataset
 #### Creating the Dataset
 The dataset is created from three sources:
-1.**[Amazon Book Dataset - Ratings](http://jmcauley.ucsd.edu/data/amazon/)**  
-This dataset contains the ratings of ~22 million book ratings. A typical record holds: user_id, item_id, rating entries.
-2.#### Website Scraping
-Scraped **[Scholastic Book Wizard](https://www.scholastic.com/teachers/bookwizard)** pages filtered by lexile score. Typical record contains: name, lexile pairs.
-View the **[Scrapy](https://scrapy.org/)** script [here](https://github.tamu.edu/ankurrc/cs670-Blyton/blob/master/code/crawler/BooksSpider.py).
-3.**[Amazon Book Dataset - Metadata](http://jmcauley.ucsd.edu/data/amazon/)**
-This dataset contains metadata for about 3 million books, including: name, author, price, image url etc.
+**[Amazon Book Dataset - Ratings](http://jmcauley.ucsd.edu/data/amazon/)**  
+This dataset contains the ratings of ~22 million book ratings. A typical record holds: user_id, item_id, rating entries.  
 
-**Tool Used**
+**Scholastic Book Wizard**  
+Scraped **[Scholastic Book Wizard](https://www.scholastic.com/teachers/bookwizard)** pages filtered by lexile score. Typical record contains: name, lexile pairs.
+View the **[Scrapy](https://scrapy.org/)** script [here](https://github.tamu.edu/ankurrc/cs670-Blyton/blob/master/code/crawler/BooksSpider.py).  
+
+**[Amazon Book Dataset - Metadata](http://jmcauley.ucsd.edu/data/amazon/)**  
+This dataset contains metadata for about 3 million books, including: name, author, price, image url etc.  
+
+#### Data Engineering
+
+
 
 
 ### Algorithm
