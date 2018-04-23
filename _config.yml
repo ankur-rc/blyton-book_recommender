@@ -9,7 +9,7 @@ permalink:        pretty
 # Setup
 title:            Blyton
 tagline:          'A Leveled Book Recommender'
-description:      'Your book recommendation butler.'
+description:      'Your personal book recommendation butler.'
 url:              https://github.tamu.edu/ankurrc/cs670-Blyton
 baseurl:          /
 
