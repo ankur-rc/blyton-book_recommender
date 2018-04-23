@@ -23,13 +23,13 @@ Following is a list of [leveled reading systems](https://www.scholastic.com/teac
 
 **Blyton uses a combination of the [Lexile](http://www.scholastic.com/parents/resources/article/book-selection-tips/lexile-levels-made-easy) reading score, book ratings and user preference to generate book recommendations for the readers.**
 
-## Motivation for Blyton
+## <a name="motive"></a> Motivation for Blyton
 Currently, only teachers and parents who are familiar with the workings of reading levels suggest new books to a child taking his or her guided reading level into consideration. This has several caveats like human error, bias, lack of empirical evidence behind suggestions etc. There is no commercially available automatic recommender system grounded in theory suggesting books to children on the basis of their reading levels. Blyton attacks this problem, being a simple web-based tool that generates accurate recommendations for students and thereby, offload the teacher and/or parent of this task.
 
 ### Who would use Blyton?
 Blyton would be used in schools and reading clubs to get better recommendations for individual readers. Both teachers and students (of different reading abilities) can use the tool to get recommendations on new books according to the student’s Lexile scores(or other guided system scores), interest and other factors. 
 
-## Related Work
+## <a name="rel-work"></a>Related Work
 The following systems are similar to Blyton:
 
 ### Commercial Systems
@@ -76,7 +76,7 @@ Suggesting books that are of student’s interest taking into account the genre 
 - A narrow user base (focusing primarily on children and beginner readers) and narrow book dataset (focused on books with Leveled Reading Scores).
 - Reducing the effort of teachers in finding and suggesting books to students taking into account their abilities and interest.
 
-## Proposed Solution
+## <a name="working"></a>Proposed Solution
 
 ### Overview of the tool
 Currently, Blyton runs on a **[Jupyter Notebook](http://jupyter.org/)** using **[IPython](https://ipython.org/)**. We have converted the notebook into a RESTful API. The front-end of the web app is built using **[Angular](https://angular.io/)**. 
