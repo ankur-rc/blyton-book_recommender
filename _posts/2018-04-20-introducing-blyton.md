@@ -112,10 +112,11 @@ IPython notebooks can be checked out [here](https://github.tamu.edu/ankurrc/cs67
 
 
 ### Algorithm
-For our recommendation task we relied on Latent Factor Models. We leverged the **[Surprise](http://surpriselib.com/)** open-source recommender library for eavaluating various LFMs. We settled on **SVD++** as it gave us the best score in terms of the RMSE.  
+For our recommendation task we relied on Latent Factor Models. We leverged the **[Surprise](http://surpriselib.com/)** open-source recommender library for evaluating various LFMs. We settled on **SVD++** as it gave us the best score in terms of the RMSE.  
+
 We generated predictions for all **3822** users on **6052** books, totalling **23088272** predictions.  
 
-Once, we had all the predictions, we sought to incorporate the lexile score for each user. Since our ratings were 5-core, we looked for the lexile rating of the last 5 books that a user had rated. We calulated the **mean weighted lexile** of each user by muliplying their book rating with the lexile score, and normalized it with the sum of the 5 ratings.  
+Once we had all the predictions, we sought to incorporate the lexile score for each user. Since our ratings were 5-core, we looked for the lexile rating of the last 5 books that a user had rated. We calulated the **mean weighted lexile** of each user by muliplying their book rating with the lexile score, and normalized it with the sum of the 5 ratings.  
 Once we had the mean lexile rating for a user, we sorted the books on predicted ratings. We then pick the books that are closest (within a 10-point shift) to the users calculated **mean weighted lexile** score.
 ## Evaluation of Results
 
@@ -128,16 +129,26 @@ The evaluation of the various LFMs we used:
 | NMF       | 0.9653 | 0.7512 | 5.37 (0.72)                    |
 | PMF       | 2.4462 | 2.0998 | 2.96 (0.12)                    |
 
-Clearly, SVD++ was the best choice. Note: All the evaluation was done on 5-folds cross-validation. The numbers represent the mean of the values.  
+Clearly, SVD++ was the best choice. Note: All the evaluations were done on 5-folds cross-validation. The numbers represent the mean of the values.  
 
 We further tuned our SVD++ algorithm by performing a grid-search over it's hyperparameters.
 We settled on the following values: **learning rate** = 0.009, **regularization constants** = 0.4 and **epochs** = 20.
 
 ## Conclusion
+We have developed a LFM-based book recommender that takes into account the user's reading level.
 
 ### Our Learnings
+1. Data engineering can be hard. It takes time and insight to clean the data, and expect reasonable results to allay "garbage-in, garbage-out."
+2. LFM models work really well in practice, if overfitting can be minimized by proper regularization.
+3. Enriching models by incorporating data from multiple modes, here ratings and lexile score, can be hard to come up with.
+4. Writing spiders can be fun!
 
 ### Challenges We Faced
+1. Data prepartion was time-consuming.
+2. Making predictions repeatedly resulted in system-reboots due to out-of-memory errors.
+3. Incorporating the lexile score was not straightforward.  
+
 
 ### Future Work
+There are no commercial book recommenders that take into account reading levels. Our primitive approach needs to be tested further. Moreover, we hope to exploit the temporal aspects of the data, and perhaps come up with even more powerful models. One such approach could be the use of neural appraoches, namely "Gated Recurrent Units."
 
