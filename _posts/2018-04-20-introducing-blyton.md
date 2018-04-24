@@ -100,19 +100,38 @@ This dataset contains metadata for about 3 million books, including: name, autho
 
 We collated the three datasets in the following way:
 1. Our primary purpose was to augment Amazon's book dataset with Scholastic's lexile score dataset. 
-2. THe number of books in either dataset was different. Moreover, each dataset had duplicate titles.
+2. The number of books in either dataset was different. Moreover, each dataset had duplicate titles.
 3. 'am-m' and 'sc-l' were rid of duplicate book titles, and contained **1860814** and **45900** titles, respectively.
 4. Of these titles, the common ones were chosen and both the datasets were merged on this criteria. Now, we had **9910** titles.
 5. The merged dataset (merge-df), now contained a typical entry as book id, title, lexile, author, img-url.
-6. Once, we obtained the merged dataset in step 5, we had to sieve out all ratings from 'am-r' for book ids not in 'merged-df'
-7. Once we sieved out such entries, we found that there were **331276** ratings from **258905** users. THie implied that certain users were likely to have rated only one book. 
-8. In light of step 7, we decided to convert the dataset to be 5-core, i.e each user should atleast have 5 rated items. Noe our dataset (utility-df) contained **42472** ratings from **3822** users on **6052** books. 
+6. Once we obtained the merged dataset in step 5, we had to sieve out all ratings from 'am-r' for book ids not in 'merged-df'
+7. Once we sieved out such entries, we found that there were **331276** ratings from **258905** users. This implied that certain users were likely to have rated only one book. 
+8. In light of step 7, we decided to convert the dataset to be 5-core, i.e each user should atleast have 5 rated items. Noe our dataset (utility-df) contained **42472** ratings from **3822** users on **6052** books.  
+
 IPython notebooks can be checked out [here](https://github.tamu.edu/ankurrc/cs670-Blyton/tree/master/code/data.engg) 
 
 
 ### Algorithm
-For our recommendation task we reled on Latent Factor Models
+For our recommendation task we relied on Latent Factor Models. We leverged the **[Surprise](http://surpriselib.com/)** open-source recommender library for eavaluating various LFMs. We settled on **SVD++** as it gave us the best score in terms of the RMSE.  
+We generated predictions for all **3822** users on **6052** books, totalling **23088272** predictions.  
+
+Once, we had all the predictions, we sought to incorporate the lexile score for each user. Since our ratings were 5-core, we looked for the lexile rating of the last 5 books that a user had rated. We calulated the **mean weighted lexile** of each user by muliplying their book rating with the lexile score, and normalized it with the sum of the 5 ratings.  
+Once we had the mean lexile rating for a user, we sorted the books on predicted ratings. We then pick the books that are closest (within a 10-point shift) to the users calculated **mean weighted lexile** score.
 ## Evaluation of Results
+
+The evaluation of the various LFMs we used:  
+
+| Algorithm | RMSE   | MAE    | Fit Time (Test Time) (seconds) |
+|-----------|--------|--------|--------------------------------|
+| SVD       | 0.8047 | 0.6154 | 2.14 (0.36)                    |
+| SVD++     | 0.7988 | 0.6058 | 24.01 (1.04)                   |
+| NMF       | 0.9653 | 0.7512 | 5.37 (0.72)                    |
+| PMF       | 2.4462 | 2.0998 | 2.96 (0.12)                    |
+
+Clearly, SVD++ was the best choice. Note: All the evaluation was done on 5-folds cross-validation. The numbers represent the mean of the values.  
+
+We further tuned our SVD++ algorithm by performing a grid-search over it's hyperparameters.
+We settled on the following values: **learning rate** = 0.009, **regularization constants** = 0.4 and **epochs** = 20.
 
 ## Conclusion
 
