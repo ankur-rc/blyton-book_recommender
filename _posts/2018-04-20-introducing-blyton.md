@@ -78,33 +78,40 @@ Suggesting books that are of student’s interest taking into account the genre 
 
 ## <a name="working"></a>Proposed Solution
 
-### Overview of the tool
-Currently, Blyton runs on a **[Jupyter Notebook](http://jupyter.org/)** using **[IPython](https://ipython.org/)**. We have converted the notebook into a RESTful API. The front-end of the web app is built using **[Angular](https://angular.io/)**. 
+### Overview of the service
+Blyton runs on a **[Jupyter Notebook](http://jupyter.org/)**-powereed REST-service. The front-end of the web app is built on **[Angular Material](https://angular.io/)**.
 
 ### Dataset
+
 #### Creating the Dataset
-The dataset is created from three sources:
-**[Amazon Book Dataset - Ratings](http://jmcauley.ucsd.edu/data/amazon/)**  
+The dataset is created from three sources:  
+
+**[Amazon Book Dataset - Ratings (am-r)](http://jmcauley.ucsd.edu/data/amazon/)**  
 This dataset contains the ratings of ~22 million book ratings. A typical record holds: user_id, item_id, rating entries.  
 
-**Scholastic Book Wizard**  
-Scraped **[Scholastic Book Wizard](https://www.scholastic.com/teachers/bookwizard)** pages filtered by lexile score. Typical record contains: name, lexile pairs.
+**[Scholastic Book Wizard (sc-bw)](https://www.scholastic.com/teachers/bookwizard)**    
+Scraped **Scholastic Book Wizard** pages filtered by lexile score. Typical record contains: name, lexile pairs.
 View the **[Scrapy](https://scrapy.org/)** script [here](https://github.tamu.edu/ankurrc/cs670-Blyton/blob/master/code/crawler/BooksSpider.py).  
 
-**[Amazon Book Dataset - Metadata](http://jmcauley.ucsd.edu/data/amazon/)**  
+**[Amazon Book Dataset - Metadata (am-m)](http://jmcauley.ucsd.edu/data/amazon/)**  
 This dataset contains metadata for about 3 million books, including: name, author, price, image url etc.  
 
-#### Data Engineering
+#### Data Engineering  
 
-
+We collated the three datasets in the following way:
+1. Our primary purpose was to augment Amazon's book dataset with Scholastic's lexile score dataset. 
+2. THe number of books in either dataset was different. Moreover, each dataset had duplicate titles.
+3. 'am-m' and 'sc-l' were rid of duplicate book titles, and contained **1860814** and **45900** titles, respectively.
+4. Of these titles, the common ones were chosen and both the datasets were merged on this criteria. Now, we had **9910** titles.
+5. The merged dataset (merge-df), now contained a typical entry as book id, title, lexile, author, img-url.
+6. Once, we obtained the merged dataset in step 5, we had to sieve out all ratings from 'am-r' for book ids not in 'merged-df'
+7. Once we sieved out such entries, we found that there were **331276** ratings from **258905** users. THie implied that certain users were likely to have rated only one book. 
+8. In light of step 7, we decided to convert the dataset to be 5-core, i.e each user should atleast have 5 rated items. Noe our dataset (utility-df) contained **42472** ratings from **3822** users on **6052** books. 
+IPython notebooks can be checked out [here](https://github.tamu.edu/ankurrc/cs670-Blyton/tree/master/code/data.engg) 
 
 
 ### Algorithm
-Collaborative Filtering based Hybrid Recommendation using Matrix Factorization
-We plan on using a collaborative filtering technique with implicit data in terms of the user's reading ability. We plan to employ algorithms like Bayesian Personalised Ranking or Alternating Least Squares for matrix factorization.
-In our case, the number of books will be our features & each user would be a data point. Since the number of books is very high, we also plan to use dimensionality reduction techniques, such as SVD. This would enable better representation and fasten the computation.
-Another avenue to pursue is the use of sequence modelling. Our dataset contains users’ book ratings with their purchase timestamps. Thus, the problem of prediction could be reduced to a sequence prediction problem. Neural methods employed in sequence prediction involves the use of RNNs, more specifically we could use Gated Recurrent Units (GRUs).
-
+For our recommendation task we reled on Latent Factor Models
 ## Evaluation of Results
 
 ## Conclusion
