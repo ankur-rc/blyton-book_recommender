@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12" style="text-align:center;">
+        <h1 class="main-heading">Similar Books</h1>
+      </div>
+    </div>
+    <div class="row">
+
+    <div class="col-md-4">
+    <mat-card>
+        <mat-card-title>Book Name<mat-chip-list><mat-chip color="accent" selected="true">User Rating</mat-chip><mat-chip color="primary" selected="true">Lexile Score</mat-chip></mat-chip-list></mat-card-title>
+        
+        <mat-card-header style="display: flex;
+        justify-content: space-between;">            
+            <mat-card-subtitle>
+              By Author Name
+              <p>Description</p>
+            </mat-card-subtitle>
+            <div fxFlex></div>
+              <button mat-mini-fab color="accent">
+                <mat-icon aria-label="">thumb_up</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn">
+                <mat-icon aria-label="">thumb_down</mat-icon>
+              </button>
+          </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-actions>
+        <a mat-button href="https://angular.io/docs/ts/latest/" target="_blank">
+          <i class="fa fa-amazon fa-lg"></i> Buy
+        </a>
+        <a mat-button href="https://github.com/angular/angular" target="_blank">
+          <i class="fa fa-bookmark fa-lg"></i> Save
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+    <div class = "col-md-8" style="text-align:center;">
+        
+        <ngx-slideshow #carousel [cards]="2" [cardSize]="'350px'" [padding]="'14px'">
+          <li *ngFor="let number of [0,1,2,3]" class="col-md-3">  
+          <mat-card>
+                
+              <mat-card-title>Book Name<mat-chip-list><mat-chip color="accent" selected="true">User Rating</mat-chip><mat-chip color="primary" selected="true">Lexile Score</mat-chip></mat-chip-list></mat-card-title>
+                
+                <mat-card-header>            
+                    <mat-card-subtitle>
+                      By Author Name
+                      <p>Description</p>
+                    </mat-card-subtitle>
+                    
+                  </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            </mat-card>
+          </li>
+        </ngx-slideshow>
+        <div  class = "col-md-8" class="button-row" style="display: flex;
+        justify-content: space-between;">
+            <button (click)="carousel.left()" mat-mini-fab color="primary"><mat-icon>keyboard_arrow_left</mat-icon></button>  
+            <div fxFlex>Similar Books</div>
+            <button (click)="carousel.right()" mat-mini-fab color="primary"><mat-icon>keyboard_arrow_right
+              </mat-icon></button>
+            
+        </div>
+
+    </div>
+</div>
+  <!-- <div class="row">
+      <div  class="col-md-6 col-lg-3" [ngClass]="animateOnRouteEnter"  *ngFor="let number of [0,1,2,3]">
+        <mat-card>
+            <mat-card-title>Book Name<mat-chip-list><mat-chip color="accent" selected="true">User Rating</mat-chip><mat-chip color="primary" selected="true">Lexile Score</mat-chip></mat-chip-list></mat-card-title>
+            
+            <mat-card-header style="display: flex;
+            justify-content: space-between;">            
+                <mat-card-subtitle>
+                  By Author Name
+                  <p>Description</p>
+                </mat-card-subtitle>
+                <div fxFlex></div>
+                  <button mat-mini-fab color="accent">
+                    <mat-icon aria-label="">thumb_up</mat-icon>
+                  </button>
+                  <button mat-mini-fab color="warn">
+                    <mat-icon aria-label="">thumb_down</mat-icon>
+                  </button>
+              </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-actions>
+            <a mat-button href="https://angular.io/docs/ts/latest/" target="_blank">
+              <i class="fa fa-amazon fa-lg"></i> Buy
+            </a>
+            <a mat-button href="https://github.com/angular/angular" target="_blank">
+              <i class="fa fa-bookmark fa-lg"></i> Save
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div> -->
+</div>  
+  
