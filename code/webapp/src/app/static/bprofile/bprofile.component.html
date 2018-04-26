@@ -1,0 +1,115 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12" style="text-align:center;">
+        <h1 class="main-heading">Similar Books</h1>
+      </div>
+    </div>
+    <div class="row">
+
+    <div class="col-md-4">
+      <mat-card>
+        <img mat-card-image src="{{book.imUrl}}" alt="Book Photo" style="max-height: 350px;">  
+        <mat-card-title>{{book.title|truncate : 20}}<mat-chip-list><mat-chip color="accent" selected="true">Rating:{{book.rating_5|number}}</mat-chip><mat-chip color="primary" selected="true">Lexile:{{book.lexile}}L</mat-chip></mat-chip-list></mat-card-title>
+          
+        <mat-card-content >              
+              Authors: <mat-chip-list><mat-chip *ngFor="let author of book.authors" (click)="openLink('https://www.amazon.com/s?url=search-alias%3Daps&field-keywords='+author.name+'+books')">{{author.name|truncate}}</mat-chip></mat-chip-list>
+          </mat-card-content>
+        
+        <mat-card-actions style="display: flex;
+        justify-content: center;">
+            <a mat-icon-button href="https://www.amazon.com/s?url=search-alias%3Daps&field-keywords={{book.title}}" target="_blank">
+              <i class="fa fa-amazon fa-lg"></i>
+            </a>
+            <a mat-icon-button href="#">
+              <i class="fa fa-bookmark fa-lg"></i>
+            </a>
+            <a mat-icon-button href="#">
+              <i class="fa fa-thumbs-up fa-lg"></i>
+            </a>
+            <a mat-icon-button href="#">
+              <i class="fa fa-thumbs-down fa-lg"></i>
+            </a>
+          </mat-card-actions>
+      </mat-card>
+  </div>
+    <div class = "col-md-8" style="text-align:center;">
+        
+        <!-- <ngx-slideshow #carousel [cards]="2" [cardSize]="'350px'" [padding]="'14px'">
+          <li *ngFor="let number of [0,1,2,3]" class="col-md-3">  
+          <mat-card>
+                
+              <mat-card-title>Book Name<mat-chip-list><mat-chip color="accent" selected="true">User Rating</mat-chip><mat-chip color="primary" selected="true">Lexile Score</mat-chip></mat-chip-list></mat-card-title>
+                
+                <mat-card-header>            
+                    <mat-card-subtitle>
+                      By Author Name
+                      <p>Description</p>
+                    </mat-card-subtitle>
+                    
+                  </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            </mat-card>
+          </li>
+        </ngx-slideshow> -->
+        <ngx-slick class="carousel" #slickModal3="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)" >
+          <div ngxSlickItem *ngFor="let number of [0,1,2,3,4,5]" class="slide" style="margin:10px;">
+              <mat-card>
+                  
+                <mat-card-title>Book Name<mat-chip-list><mat-chip color="accent" selected="true">User Rating</mat-chip><mat-chip color="primary" selected="true">Lexile Score</mat-chip></mat-chip-list></mat-card-title>
+                  
+                  <mat-card-header>            
+                      <mat-card-subtitle>
+                        By Author Name
+                        <p>Description</p>
+                      </mat-card-subtitle>
+                      
+                    </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              </mat-card>
+            </div>
+          </ngx-slick>  
+        <div  class = "col-md-8" class="button-row" style="display: flex;
+        justify-content: space-between;">
+            <button (click)="slickModal3.slickPrev()" mat-mini-fab color="primary"><mat-icon>keyboard_arrow_left</mat-icon></button>  
+            <div fxFlex>Similar Books</div>
+            <button (click)="slickModal3.slickNext()" mat-mini-fab color="primary"><mat-icon>keyboard_arrow_right
+              </mat-icon></button>
+            
+        </div>
+
+    </div>
+</div>
+  <!-- <div class="row">
+      <div  class="col-md-6 col-lg-3" [ngClass]="animateOnRouteEnter"  *ngFor="let number of [0,1,2,3]">
+        <mat-card>
+            <mat-card-title>Book Name<mat-chip-list><mat-chip color="accent" selected="true">User Rating</mat-chip><mat-chip color="primary" selected="true">Lexile Score</mat-chip></mat-chip-list></mat-card-title>
+            
+            <mat-card-header style="display: flex;
+            justify-content: space-between;">            
+                <mat-card-subtitle>
+                  By Author Name
+                  <p>Description</p>
+                </mat-card-subtitle>
+                <div fxFlex></div>
+                  <button mat-mini-fab color="accent">
+                    <mat-icon aria-label="">thumb_up</mat-icon>
+                  </button>
+                  <button mat-mini-fab color="warn">
+                    <mat-icon aria-label="">thumb_down</mat-icon>
+                  </button>
+              </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-actions>
+            <a mat-button href="https://angular.io/docs/ts/latest/" target="_blank">
+              <i class="fa fa-amazon fa-lg"></i> Buy
+            </a>
+            <a mat-button href="https://github.com/angular/angular" target="_blank">
+              <i class="fa fa-bookmark fa-lg"></i> Save
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div> -->
+</div>  
+  
