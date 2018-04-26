@@ -1,10 +1,10 @@
-import { Component, OnInit, ElementRef, Renderer2, ViewChild,Inject } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild, Inject } from '@angular/core';
 import { Router } from "@angular/router";
 import { environment as env } from '@env/environment';
 import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
 import { NgxSlideshowModule } from 'ngx-slideshow';
 import { BooksService } from './books.service';
-import {TruncatePipe} from './truncate.pipe';
+import { TruncatePipe } from './truncate.pipe';
 
 @Component({
   selector: 'anms-books',
@@ -19,61 +19,69 @@ export class BooksComponent implements OnInit {
   userList: any = [];
   // books_spliced: any = [];
   userList_spliced: any = [];
-  selectedUser:any = "";
-  loader1:boolean = true;
-  loader2:boolean = true;
+  selectedUser: any = "";
+  loader1: boolean = true;
+  loader2: boolean = true;
+  slideConfig = { "slidesToShow": 3, "slidesToScroll": 3 };
   constructor(private router: Router, private booksService: BooksService) {
 
 
-
+  }
+  afterChange(e) {
+    console.log('afterChange');
   }
 
   ngOnInit() {
     this.getUserList();
-    
-
+  }
+  public myfunc(event: Event) {
   }
   getUserList(): void {
     this.booksService.getUserList().subscribe(
-      data => { this.userList = data;
-        this.userList_spliced = this.userList.slice(0,200) 
-       this.selectedUser = this.userList[0]
-       this.getBooks();
-      
+      data => {
+      this.userList = data;
+        this.userList_spliced = this.userList.slice(0, 200)
+        this.selectedUser = this.userList[0]
+        this.getBooks();
+
       },
       err => console.error(err),
       () => console.log('done loading users')
     );
-    
-    
+
+
   }
-  getBooks(user=this.userList[0]):void{
+  getBooks(user = this.userList[0]): void {
     this.getRecommendedBooksForUser(user);
     this.getPastBooksForUser(user);
 
   }
-  getRecommendedBooksForUser(user=this.userList[0]): void {
+  getRecommendedBooksForUser(user = this.userList[0]): void {
     this.loader1 = true;
     this.booksService.getRecommendedBooks(user).subscribe(
-      data => { this.books_rec = data 
+      data => {
+      this.books_rec = data
         // this.books_spliced = this.books;
-        this.loader1 =false;
-      console.log(data)},
+        this.loader1 = false;
+        console.log(data)
+      },
       err => console.error(err),
       () => console.log('done loading recommended books')
     );
-   
+
   }
-  getPastBooksForUser(user=this.userList[0]): void {
+  getPastBooksForUser(user = this.userList[0]): void {
     this.loader2 = true;
     this.booksService.getPastBooks(user).subscribe(
-      data => { this.books_past = data; 
-        this.loader2 =false;
-      console.log(data)},
+      data => {
+      this.books_past = data;
+        this.loader2 = false;
+        console.log(data)
+      },
       err => console.error(err),
       () => console.log('done loading past books')
     );
-   
+
   }
   private showLoader(): void {
     console.log('Show loader');
@@ -81,14 +89,12 @@ export class BooksComponent implements OnInit {
   private hideLoader(): void {
     console.log('Hide loader');
   }
-
-
   
   openLink(link: string) {
     window.open(link, '_blank');
   }
 
-  OnMatCardClickEvent(number) {
-    this.router.navigate(['bprofile']);
+  OnMatCardClickEvent(bookObject) {
+    this.router.navigate(['bprofile',{book:JSON.stringify(bookObject)}]);
   }
 }

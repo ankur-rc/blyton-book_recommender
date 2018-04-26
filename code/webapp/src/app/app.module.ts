@@ -10,7 +10,7 @@ import { StaticModule } from './static';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxSlideshowModule } from 'ngx-slideshow';
+// import { NgxSlideshowModule } from 'ngx-slideshow';
 import { BooksService } from './static/books/books.service';
 import {InfoDialog} from './app.component'
 import {MatDialogModule} from '@angular/material';
@@ -19,7 +19,7 @@ import {MatDialogModule} from '@angular/material';
     // angular
     BrowserAnimationsModule,
     BrowserModule,
-    NgxSlideshowModule.forRoot(),
+    // NgxSlideshowModule.forRoot(),
     // core & shared
     CoreModule,
     SharedModule,
