@@ -10,12 +10,12 @@ permalink:        pretty
 title:            Blyton
 tagline:          'A Leveled Book Recommender'
 description:      'Your personal book recommendation butler.'
-url:              https://github.tamu.edu/ankurrc/cs670-Blyton
+url:              https://github.com/ankur-rc/blyton-book_recommender/
 baseurl:          /
 
 author:
   name:           'Team Blyton'
-  url:            https://github.tamu.edu/ankurrc/cs670-Blyton/graphs/contributors
+  url:            https://github.com/ankur-rc/blyton-book_recommender//graphs/contributors
 
 paginate:         5
 
@@ -28,5 +28,5 @@ plugins:
 version:          1.0.0
 
 github:
-  repo:           https://github.tamu.edu/ankurrc/cs670-Blyton
+  repo:           https://github.com/ankur-rc/blyton-book_recommender/
 
